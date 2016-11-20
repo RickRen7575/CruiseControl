@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Android.Runtime;
 using System;
+using Android.Content;
 
 namespace CruiseControlAndroid
 {
@@ -25,10 +26,12 @@ namespace CruiseControlAndroid
         ProgressBar _progressBar;
         TextView _progressText;
         TextView _messagePrompt;
+        Button _rewardsButton;
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
+
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
@@ -45,6 +48,13 @@ namespace CruiseControlAndroid
             _messagePrompt.Text = "Start driving to earn points!";
 
             InitializeLocationManager();
+
+            _rewardsButton = FindViewById<Button>(Resource.Id.RewardsButton);
+            _rewardsButton.Click += (sender, e) =>
+            {
+                var intent = new Intent(this, typeof(RewardsActivity));
+                StartActivity(intent);
+            };
         }
 
         protected override void OnResume()

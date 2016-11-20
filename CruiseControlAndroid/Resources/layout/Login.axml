@@ -5,10 +5,20 @@
     android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px">
-  <Button
-      android:text="Login"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:id="@+id/loginButton"
-      android:clickable="true" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/facebookLogo"
+        android:src="@drawable/facebooklogo"
+        android:scaleType="fitCenter"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp" />
+    <Button
+        android:text="Login with Facebook"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/loginButton"
+        android:layout_gravity="center_horizontal"
+        android:clickable="true" />
 </LinearLayout>
